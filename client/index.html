@@ -1,0 +1,383 @@
+<!doctype>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>STUMIO</title>
+        <!-- Load Vue followed by Vue Router -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+        <style>
+
+
+          body{
+            background-color: rgb(16%,30%,57%);
+          }
+
+          .stumio2{
+            height: 30px;
+          }
+
+          .stumio{
+            
+            height: 250px;
+            transition: transform .2s;
+            
+            
+          }
+
+          .stumio:hover{
+            transform: scale(1.5);
+          }
+
+          .ecart{
+            padding-top: 300px;
+            padding-bottom: 305px;
+          }
+
+          .map{
+            height: 400px;
+            
+
+           
+          }
+          .imgmap{
+            padding-top: 275px;
+            
+            padding-bottom: 275px;
+          }
+
+
+
+          .contact{
+            background-color: black;
+            padding-bottom: 200px;
+            border: solid 2px white;
+          }
+          .contct{
+            margin-bottom: -500px;
+          }
+
+          .contactstumio{
+            height: 150px;
+          }
+
+          .nous{
+            block-size: 150px;
+            writing-mode: vertical-lr;
+            padding-top: 100px;
+            background-color:rgb(16%,30%,57%);
+            padding-bottom: 100px;
+            padding-left: 60px;
+            padding-right: 50px;
+            
+          }
+
+          .ajouter{
+            
+            
+            border: 2px solid white;
+            border-radius : 30px 30px ;
+            
+            
+
+          }
+          
+
+          .cart{
+            padding-top: 275px;
+          }
+
+          .bleu{
+            background-color:rgb(16%,30%,57%);
+            
+          }
+          .droite{
+            padding-right: 50px;
+          }
+          .gauche{
+            padding-left: 50px;
+          }
+
+          .mono{
+            font-family: monospace;
+            font-size : 15px;
+            font-weight: lighter;
+            padding-top: 20px;
+          }
+
+          .italie{
+            padding-bottom: 20px;
+          }
+
+          
+
+          .crotone{
+            border-radius: 40px 40px 40px 40px ;
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+          }
+
+          .histoire{
+            background-color: black;
+            padding-top: 275px;
+            padding-bottom: 275px;
+          }
+
+          .autre{
+            padding-top: 275px;
+            padding-bottom: 275px;
+          }
+
+         
+          .flag{
+            height: 50px;
+       
+          }
+
+          article {
+            display: flex;
+          }
+          
+          .article-img {
+          flex:1;
+          padding-left: 50px;
+          padding-top: 50px;
+          display: flex;
+          
+          justify-content: center;
+          align-items: flex-start;
+          
+          
+          }
+          
+          .article-img div {
+            width: 500px;
+            height: 500px;
+            background-size: cover ;
+            border-radius: 40px 40px 40px 40px ;
+            
+            
+           
+          
+            
+          }
+          
+          
+          .article-content {
+            padding-left: 70px;
+            padding-top: 50px;
+            flex: 3;
+            font-family: Avenir, sans-serif;
+          }
+          
+          .article-title {
+            display: flex;
+            justify-content: space-around;
+            font-family: Avenir, sans-serif;
+            font-weight: lighter;
+            color: white;
+          }
+
+          .article-ins {
+            display: flex;
+            justify-content: space-around;
+            font-family: Avenir, sans-serif;
+            font-weight: lighter;
+            color: white;
+            font-size: 25px;
+          }
+
+          
+          
+          textarea {
+            width: 100%;
+          }
+
+          .article_panier{
+            font-family: Avenir, sans-serif;
+            font-weight: lighter;
+            
+
+          }
+
+          form{
+            padding-top: 30px;
+            padding-bottom: 20px;
+          }
+
+          .nav{
+            display: flex;
+            
+            
+          }
+          h2{
+            padding-bottom: 20px;
+          }
+
+          h3{
+            font-family:Avenir, sans-serif ;
+            padding-top: 30px;
+            font-weight: lighter;
+          }
+
+          #space{
+            padding-left: 40px;
+            
+            
+          }
+          #phone1,#phone2,#phone3,#phone4{
+            display: flex;
+            height: 400px;
+            background-repeat: no-repeat;
+            padding-right: 25px;
+            padding-left: 25px;
+            /* background-size: auto 100%;  */
+            -webkit-box-reflect: below 1px -webkit-gradient(linear, 0 0%, 0 100%, from(transparent), color-stop(0.9, transparent), to(white));
+            transition: transform .2s;
+            
+          }
+
+          
+
+          #phone1:hover{
+            transform: scale(1.5);
+          }
+
+          #phone2:hover {
+            transform: scale(1.5);
+          }
+
+          #phone3:hover {
+            transform: scale(1.5);
+          }
+
+          #phone4:hover {
+            transform: scale(1.5);
+          }
+
+
+
+
+          .img3cont{
+            padding-top: 275px;
+            padding-bottom: 275px;
+            background-color: #000000;
+
+          }
+
+          .img3{
+            
+            display: flex;
+            justify-content: center;
+            
+
+          }
+          footer{
+            padding-top: 500px;
+            
+          }
+
+          nav navbar{
+            position: sticky;
+          }
+
+          .coup{
+            padding-right: 50px;
+            padding-top: 50px;
+            font-size: 40px;
+          }
+
+          .heartf{
+            height:25px;
+            width: 25px;
+          }
+
+          .rese{
+            padding-top: 70px;
+          }
+
+          .forca{
+            padding-left:20px;
+          }
+          
+          </style>
+          
+    </head>
+    <body>
+        <div id="app">
+          <header>
+            
+            <nav class="navbar navbar-light" style="background-color: #000000;">
+              
+              <router-link to='/' class=" text-white font-weight-lighter display-5" id="space">Accueil </router-link>
+              <router-link to='/histoire' class="text-white font-weight-lighter display-5" id="space">La petite histoire </router-link>
+              <router-link to='/bars' class=" text-white font-weight-lighter display-5" id="space">Restaurants</router-link>
+              <router-link to='/panier' class="  text-white font-weight-lighter display-5" id="space">Favoris <img src="icons8-aimer-50-4.png" class="heartf"> </router-link>
+              <router-link to='/register' class="text-white font-weight-lighter display-5" id="space">Inscription </router-link>
+              <router-link to='/login' class="text-white font-weight-lighter display-5" id="space">Connexion </router-link>
+
+              
+              <router-link to='/' class=" text-white font-weight-lighter display-5" id="space"><img src="white_logo_dark_background.jpg" class="stumio2"></router-link>
+              
+            </nav>
+
+           
+
+
+          </header>
+
+
+          <main>
+
+            <!--<h1 class="text-right"><img src="Capture d’écran 2020-10-22 à 10.18.41.png" class="map"></h1>-->
+            
+            
+
+
+
+
+            <router-view
+              :articles="articles"
+              :panier="panier"
+              :user="user"
+              :if-connected="ifConnected"
+              @add-to-panier="addToPanier"
+              @remove-from-panier="removeFromPanier"
+              @add-article="addArticle"
+              @delete-article="deleteArticle"
+              @update-article="updateArticle"
+              @login="login"
+              @reserver="reserver"
+
+              
+            ></router-view>
+          </main>
+
+          <footer>
+            <nav class="navbar navbar-light" style="background-color: #000000">
+              <p class="text-right text-white font-weight-lighter">Copyright ©</p>
+              <router-link to='/' class=" text-white font-weight-lighter display-5" id="space"><img src="white_logo_dark_background.jpg" class="stumio2"></router-link>
+            </nav>
+
+
+          </footer>
+
+        </div>
+        <script src="/vue-application.js"></script>
+    </body>
+</html>
+
